@@ -1,0 +1,52 @@
+//@import "another.scss"; // this will import another file and merge into the one.
+@import "~@angular/material/_theming";
+@include mat-core();
+
+// Define a custom theme.
+$app-primary: mat-palette($mat-blue, 600);
+$app-accent: mat-palette($mat-yellow, 700);
+$app-warn: mat-palette($mat-red);
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+//Define custom typography.
+
+$app-typography: mat-typography-config(
+    $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
+    $headline:      mat-typography-level(35px, 32px, 700),
+    $body-1:        mat-typography-level(35px, 35px, 700)
+);
+
+@include angular-material-typography($app-typography);
+
+
+
+// my testing 
+@mixin soft-border($border-radius) {
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    padding: 10px;
+}
+
+$color: blue;
+
+h1 {
+    // ...
+    color: $color;
+}
+
+h2 {
+    // ...
+    color: $color;
+}
+
+
+.box {
+    @include soft-border(5px);
+    
+}
+.modern-box {
+    @include soft-border(10px);
+    //....
+}
