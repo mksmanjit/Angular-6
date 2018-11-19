@@ -16,7 +16,7 @@ export class ProductService {
     return this.db.list<Product>('/products');
   }
   get(productId) {
-   return this.db.object('/products/' + productId);
+   return this.db.object<Product>('/products/' + productId);
   }
   update(productId, product) {
     return this.db.object('/products/' + productId).update(product);

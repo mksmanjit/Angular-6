@@ -1,3 +1,4 @@
+import { ShippingDetails } from './../../../shared/models/shipping-details';
 import { ShoppingCart } from '../../../shared/models/shopping-cart';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -13,7 +14,7 @@ import { Order } from '../../../shared/models/order';
 })
 export class ShippingFormComponent implements OnInit, OnDestroy {
   @Input('cart') cart: ShoppingCart;
-  shipping = {};
+  shipping: ShippingDetails;
   userSubscription: Subscription;
   userId: string;
   constructor(

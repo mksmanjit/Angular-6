@@ -3,6 +3,7 @@ import { ProductService } from '../../../shared/services/product.service';
 import { CategoryService } from '../../../shared/services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { Product } from '../../../shared/models/product';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { take } from 'rxjs/operators';
 })
 export class ProductFormComponent implements OnInit {
   categories$;
-  product = {};
+  product: Product;
   id;
 
   constructor(
